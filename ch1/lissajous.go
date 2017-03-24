@@ -5,6 +5,7 @@ import (
 	"image/color"
 	"image/gif"
 	"io"
+	"log"
 	"math"
 	"math/rand"
 	"os"
@@ -17,18 +18,19 @@ const (
 	blackIndex = 1
 )
 
-func main() {
-	lissajous(os.Stdout)
+func main1() {
+	lissajous(os.Stdout, 5)
 }
 
-func lissajous(out io.Writer) {
+func lissajous(out io.Writer, cycles float64) {
 	const (
-		cycles  = 5
+		//cycles  = 5
 		res     = 0.001
 		size    = 100
 		nframes = 64
 		delay   = 8
 	)
+	log.Printf("%t", cycles)
 	freq := rand.Float64() * 3.0
 	anim := gif.GIF{LoopCount: nframes}
 	phase := 0.0
