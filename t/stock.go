@@ -34,7 +34,7 @@ func main() {
 		fmt.Println(err)
 	}
 
-	cookie0 := &http.Cookie{Name: "xq_a_token", Value: "ca292f8d934efc28f3fd052b7dcf46f14a20a0d3"}
+	cookie0 := &http.Cookie{Name: "xq_a_token", Value: "dd0f9bda11342b5898e17aeed3aa15d9164f4b0d"}
 	//cookie1 := &http.Cookie{Name: "xq_r_token", Value: "d1accc7b0cafd743be1b975a863a146e514d9c80"}
 
 	req.AddCookie(cookie0)
@@ -52,14 +52,15 @@ func main() {
 	if err != nil {
 		return
 	}
-
+	fmt.Printf("%s", ret)
 	err = json.Unmarshal([]byte(ret), stock)
 
 	fmt.Println(err)
 
-	compare(0.00, 10.00)
-	compare(1.00, 10.00)
-	compare(2.00, 10.00)
+	//compare(0.00, 10.00)
+	//compare(1.00, 10.00)
+	//compare(2.00, 10.00)
+	compare(0.50, 10.00)
 
 	//"SH600649","城投控股",14.83,-1.65,-10.01,16.48,0.0,0.0,0.0,0.0,0.0,3.751360665222E10,17.9085,21.41,13.06,"false"
 	//fmt.Println(string(ret))
