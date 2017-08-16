@@ -37,7 +37,7 @@ func main() {
 		fmt.Println(err)
 	}
 
-	cookie0 := &http.Cookie{Name: "xq_a_token", Value: "79cc39194e305abf7bd6d0f95f42e2a260b80f92"}
+	cookie0 := &http.Cookie{Name: "xq_a_token", Value: "653eba279cad4aea82469384444a3d9a2443fd5f"}
 	//cookie1 := &http.Cookie{Name: "xq_r_token", Value: "d1accc7b0cafd743be1b975a863a146e514d9c80"}
 
 	req.AddCookie(cookie0)
@@ -63,7 +63,7 @@ func main() {
 	//compare(0.00, 10.00)
 	//compare(1.00, 10.00)
 	//compare(2.00, 10.00)
-	compare(0.30, 10.00)
+	compare(0.1, 10.00)
 
 	//"SH600649","城投控股",14.83,-1.65,-10.01,16.48,0.0,0.0,0.0,0.0,0.0,3.751360665222E10,17.9085,21.41,13.06,"false"
 	//fmt.Println(string(ret))
@@ -74,12 +74,11 @@ func compare(base, now float64) {
 	fmt.Println()
 
 	fname := strconv.FormatFloat(base, 'f', -1, 64) + " " + strconv.FormatFloat(now, 'f', -1, 64) + " " + time.Now().Format("2006-01-02 15-04-05")
-	fmt.Println(fname)
-	f, err := os.Create(fname)
+
+	f, err := os.Create("stockTxt/" + fname)
 	if err != nil {
 		fmt.Println(err)
 	}
-	f.WriteString("hahahaha")
 	_, err = f.WriteString("https://xueqiu.com/S/")
 	if err != nil {
 		fmt.Println(err)
